@@ -1,11 +1,14 @@
+import { useParams } from 'react-router-dom';
 import Profile from "@/components/Profile";
 
 const ProfilePage = () => {
-  // This would normally come from your database
+  const { username } = useParams();
+  
+  // This would normally fetch data from your backend based on the username
   const mockProfile = {
-    username: "johndoe",
+    username: username || "johndoe",
     bio: "Digital creator & content enthusiast. Sharing my journey and favorite resources.",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=johndoe",
+    avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${username}`,
     links: [
       {
         id: "1",
@@ -29,10 +32,10 @@ const ProfilePage = () => {
       },
     ],
     socialLinks: {
-      instagram: "https://instagram.com/johndoe",
-      twitter: "https://twitter.com/johndoe",
-      youtube: "https://youtube.com/johndoe",
-      website: "https://johndoe.com",
+      instagram: `https://instagram.com/${username}`,
+      twitter: `https://twitter.com/${username}`,
+      youtube: `https://youtube.com/${username}`,
+      website: `https://${username}.com`,
     },
   };
 
