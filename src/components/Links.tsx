@@ -80,7 +80,7 @@ export default function Links() {
         ))}
         {links.length === 0 && (
           <div className="text-center py-8 text-muted-foreground">
-            No links yet. Click &quot;Add Link&quot; to get started.
+            No links yet. Click "Add Link" to get started.
           </div>
         )}
       </CardContent>
